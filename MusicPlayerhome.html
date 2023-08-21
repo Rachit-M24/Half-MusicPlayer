@@ -1,0 +1,355 @@
+<html>
+
+<head>
+  <title>i-Tune</title>
+  <link rel="stylesheet" href="/css/pMusic player.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/SongList.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #06eff7;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 44px 80vh 75px;
+    grid-gap: 3px;
+    border: none;
+    border-radius: 4px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+
+/*==================Header==================*/
+.header {
+    background-color: rgb(22, 22, 22);
+    grid-area: h;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .logo img {
+    height: 40px;
+    width: 40px;
+    color: aliceblue;
+    background: radial-gradient(circle, #e00cd6, #06bff7);
+    border: none;
+    border-radius: 50%;
+    margin-top: 2px;
+    animation: circle 0.3s infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: RotateZ(15deg);
+    }
+
+    15% {
+        transform: RotateZ(30deg);
+    }
+
+    30% {
+        transform: RotateZ(45deg);
+    }
+
+    45% {
+        transform: RotateZ(60deg);
+    }
+
+    60% {
+        transform: RotateZ(65deg);
+    }
+
+    75% {
+        transform: RotateZ(70deg);
+    }
+
+    90% {
+        transform: RotateZ(80deg);
+    }
+
+    100% {
+        transform: RotateZ(90deg);
+    }
+}
+.logo span{
+    font-size: 20px;
+    color:#00ffff;
+    margin:0 0 0 5px;
+    font-weight: 800;
+}
+.option ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.option ul li {
+    list-style: none;
+    font-size: 24px;
+    margin: 8px 8px 5px 8px;
+}
+
+.option ul li a {
+    text-decoration: none;
+    color: #00ffff;
+}
+
+.option span {
+    margin-left: 8px;
+    color:transparent;
+    font-weight: 800;
+    -webkit-text-stroke:0.1px #2a2b2b;
+}
+
+/*-----------------------Menu-------------------*/
+.menu {
+    background-color:#161616;
+    grid-area: m;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.nav {
+    margin: 0 0 15px 0;
+    text-decoration: none;
+    font-size: 30px;
+    color: #FFF;
+}
+
+.menu .elements .nav:hover {
+    color: #00ffff;
+}
+
+h3 {
+    margin: 15px 0 5px 10px;
+    padding: 2.5px;
+    background-color: #585858;
+    border: none;
+    border-radius: 15px;
+}
+
+h3:hover {
+    box-shadow: 0 2px 4px 0 rgba(80, 80, 80, 0.712);
+}
+
+h3 a {
+    text-decoration: none;
+    color: #FFF;
+    margin: 0 0 0 10px;
+}
+
+h3 i {
+    color: #FFF;
+    font-size: 20px;
+    margin: 4px 2px 4px 2px;
+}
+
+h3 a:hover {
+    color: #00ffff;
+}
+
+h3 i:hover {
+    color: #00ffff;
+}
+
+.additionals {
+    margin: 5px 0 10px 10px;
+}
+
+.additionals h4 {
+    font-size: 10px;
+    margin-bottom: 8px;
+    padding: 1.5px;
+    background-color: #585858;
+    border: none;
+    border-radius: 10px;
+}
+
+.additionals h4 a {
+    text-decoration: none;
+    margin: 0 0 0 8px;
+    color: #FFF;
+}
+
+h4 i {
+    color: #FFF;
+    font-size: 18px;
+    margin: 6px 0 6px 4px;
+}
+
+h4 a:hover {
+    color: rgb(0, 255, 255);
+}
+
+h4 i:hover {
+    color: #ff00ff; 
+}
+
+/*_______________________Content____________________*/
+.content{
+    grid-area:c;
+    background-color: #161616;
+}
+.animation{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.animation ul{
+    list-style: none;
+    
+}
+.animation ul li{
+  height: 20px;
+  width:20px;
+  background-color: #00ffff;
+}
+/* box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.712);
+  box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.712); */
+/*%%%%%%%%%%%%%%%%%%%%%%%Footer%%%%%%%%%%%%%%%%%%%%%*/
+.footer {
+    background-color: rgb(9, 3, 0);
+    grid-area: f;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    position: relative;
+    z-index: 1;
+}
+
+.msquare {
+    height: 65px;
+    width: 65px;
+    margin: 8px;
+    background-color: #06bff7;
+}
+
+.controls {
+    font-size: 25px;
+    width: 60%;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 10px;
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0), 4px 4px 4px rgba(0, 0, 0, 0);
+}
+.controls:hover{
+    box-shadow: -1px -1px 4px rgb(2, 204, 255), 4px 4px 1px rgb(2, 204, 255);
+}
+#masterplayer {
+    margin: 0 20px 0 20px;
+    font-size: 25px;
+}
+
+#backward-btn,
+#forward-btn {
+    margin-top: 8px;
+    font-size: 22px;
+}
+#MyProgressbar {
+    -webkit-appearance: none;
+    background-color: #00ffff;
+    width: 60%;
+    height: 5px;
+    margin: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #06eff7;
+    /* box-shadow: 1px 2px 2px rgba(0, 0, 0, 1); */
+}
+
+#myProgressbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    /* box-shadow: 1px 4px 4px rgba(0, 0, 0, 1); */
+}
+</style>
+<body>
+  <!------------------------------------------------Header-------------------------------------- -->
+
+
+  <section class="container">
+    <section class="header">
+      <span class="logo"><img src="/Materials/Close.png"><span>i-Tune</span>
+        <hr>
+      </span>
+      <div class="option">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sign-Up</a> <span><a href="#">LogIn</a></span></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!------------------------------------------------Menu-------------------------------------- -->
+
+
+    <section class="menu">
+      <div class="elements">
+        <div class="nav" id="three">...</div>
+        <h3><i class="fa fa-search" id="i2"><a href="#">Search</i></a></h3>
+        <h3><i class="fa fa-file" id="i3"><a href="#">Library</i></a></h3>
+        <h3><i class="fa fa-file" id="i3"><a href="projectMusicPlayer.html">Songs</i></a></h3>
+        <hr>
+        <!-- <div class="additionals" id="lks">
+          <h4><i id=plus class="fa fa-plus"><a href="#">Create PlayList</i></a></h4>
+          <h4><i class="fa fa-heart"><a href="#">Liked Songs</i></a></h4>
+        </div> -->
+      </div>
+    </section>
+    <!------------------------------------------------Content-------------------------------------- -->
+    <section class="content">
+      <div class="animation">
+        <ul>
+            <div><li></li></div>
+            <div><li></li></div>
+            <div><li></li></div>
+        </ul>
+      </div>
+    </section>
+
+
+    <!------------------------------------------------FOotEr-------------------------------------- -->
+    <section class="footer">
+      <!-- <span class="msquare"></span> -->
+      <div class="controls">
+        <i class="fa-solid fa-backward-step" style="color: #00ffff;" id="backward-btn"></i>
+        <i class="fa-solid fa-play" style="color: #00ffff;" id="masterplayer"></i>
+        <i class="fa-solid fa-forward-step" style="color: #00ffff;" id="forward-btn"></i>
+        <div>
+          <input type="range" value="0" id="MyProgressbar">
+        </div>
+      </div>
+
+
+    </section>
+  </section>
+  <!-- <div class="tenor-gif-embed" data-postid="24693977" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/music-wave-gif-24693977">Music Wave GIF</a>from <a href="https://tenor.com/search/music+wave-gifs">Music Wave GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+</body>
+
+</html>
